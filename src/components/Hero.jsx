@@ -299,7 +299,7 @@ export default function Hero() {
           {/* Social links */}
           <div ref={socialsRef} className="hero-socials" style={{ opacity: 0 }}>
             <a
-              href="https://github.com/Venkatesh0768"
+              href="https://github.com/Geojero"
               target="_blank"
               rel="noopener noreferrer"
               className="hero-social-link"
@@ -308,7 +308,7 @@ export default function Hero() {
               <GithubIcon />
             </a>
             <a
-              href="https://www.linkedin.com/in/venkatesh-rapolu/"
+              href="https://www.linkedin.com/in/george-jeron-m/"
               target="_blank"
               rel="noopener noreferrer"
               className="hero-social-link"
@@ -316,7 +316,7 @@ export default function Hero() {
             >
               <LinkedinIcon />
             </a>
-            <a
+            {/* <a
               href="https://x.com/venkatesh6807"
               target="_blank"
               rel="noopener noreferrer"
@@ -324,7 +324,7 @@ export default function Hero() {
               aria-label="Twitter"
             >
               <TwitterIcon />
-            </a>
+            </a> */}
           </div>
         </div>
 
