@@ -1,4 +1,4 @@
-# George Jeron M Portfolio
+# george-jeron-m# George Jeron M Portfolio
 
 A pixel-perfect replica of [venkateshrapolu.vercel.app](https://venkateshrapolu.vercel.app/)
 
