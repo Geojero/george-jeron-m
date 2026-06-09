@@ -1,6 +1,5 @@
-# george-jeron-m# George Jeron M Portfolio
+# George Jeron M Portfolio
 
-A pixel-perfect replica of [venkateshrapolu.vercel.app](https://venkateshrapolu.vercel.app/)
 
 ## Tech Stack
 
