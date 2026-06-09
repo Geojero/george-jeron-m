@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect } from 'react'
+import { Analytics } from "@vercel/analytics/react"
 import LoadingScreen from './components/LoadingScreen'
 import CustomCursor from './components/CustomCursor'
 import Navbar from './components/Navbar'
@@ -53,6 +54,7 @@ export default function App() {
         </main>
         <Footer />
       </div>
+      <Analytics />
     </>
   )
 }
