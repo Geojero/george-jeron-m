@@ -52,7 +52,7 @@ export default function Footer() {
 
       <div className="footer-socials">
         <a
-          href="https://github.com/Venkatesh0768"
+          href="https://github.com/Geojero"
           target="_blank"
           rel="noopener noreferrer"
           className="footer-social-link"
@@ -61,7 +61,7 @@ export default function Footer() {
           <GithubIcon />
         </a>
         <a
-          href="https://www.linkedin.com/in/venkatesh-rapolu/"
+          href="https://www.linkedin.com/in/george-jeron-m/"
           target="_blank"
           rel="noopener noreferrer"
           className="footer-social-link"
@@ -69,7 +69,7 @@ export default function Footer() {
         >
           <LinkedinIcon />
         </a>
-        <a
+        {/* <a
           href="https://x.com/venkatesh6807"
           target="_blank"
           rel="noopener noreferrer"
@@ -77,7 +77,7 @@ export default function Footer() {
           aria-label="Twitter"
         >
           <TwitterIcon />
-        </a>
+        </a> */}
       </div>
 
       {/* <p className="footer-text">
