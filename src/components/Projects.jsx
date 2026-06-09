@@ -32,13 +32,23 @@ function GithubIcon() {
 }
 
 const projects = [
+    {
+    emoji: "🧩",
+    title: "FlexUI – React Component Registry (Open Source)",
+    description:
+      "150+ reusable UI components for React and shadcn/ui, supports Next.js and Vite. One-command install and demo site.",
+    tags: ["React", "shadcn/ui", "Vite", "Next.js"],
+    github: "https://github.com/tamilgithubid/flex-ui",
+    live: "https://flex-ui-wine.vercel.app",
+    color: "#ffd166",
+  },
   {
     emoji: "🔁",
     title: "Smart Sync – Urban Complaint Management System",
     description:
       "Platform for inter-departmental complaint management with authentication, Twilio OTP verification, file uploads, and status tracking.",
     tags: ["Node.js", "Express", "MongoDB", "Twilio"],
-    github: null,
+    github: "https://github.com/Geojero",
     live: null,
     color: "#00f0ff",
   },
@@ -48,7 +58,7 @@ const projects = [
     description:
       "Complete e-commerce platform (MERN) with authentication, admin dashboard, product management, cart and order flow.",
     tags: ["MongoDB", "Express", "React", "Node.js"],
-    github: null,
+    github: "https://github.com/Geojero/ ",
     live: null,
     color: "#41f4d6",
   },
@@ -58,7 +68,7 @@ const projects = [
     description:
       "Full voting platform used in real elections with secure voting logic and session-based controls to prevent duplicate votes.",
     tags: ["JavaScript", "PHP"],
-    github: null,
+    github: "https://github.com/Geojero/",
     live: null,
     color: "#f441b4",
   },
@@ -68,20 +78,11 @@ const projects = [
     description:
       "System to manage issue/return operations with SMS alerts for due dates (Twilio integration).",
     tags: ["PHP", "JavaScript", "Twilio"],
-    github: null,
+    github: "https://github.com/Geojero/",
     live: null,
     color: "#f4a141",
   },
-  {
-    emoji: "🧩",
-    title: "FlexUI – React Component Registry (Open Source)",
-    description:
-      "150+ reusable UI components for React and shadcn/ui, supports Next.js and Vite. One-command install and demo site.",
-    tags: ["React", "shadcn/ui", "Vite", "Next.js"],
-    github: null,
-    live: "https://flex-ui-wine.vercel.app",
-    color: "#ffd166",
-  },
+
 ];
 
 export default function Projects() {
@@ -178,17 +179,11 @@ export default function Projects() {
             >
               {/* Image area */}
               <div
-                className="project-card-image"
                 style={{
                   background: `linear-gradient(135deg, rgba(${project.color === "#00f0ff" ? "0,240,255" : project.color === "#41f4d6" ? "65,244,214" : project.color === "#f441b4" ? "244,65,180" : "244,161,65"},0.08) 0%, rgba(255,255,255,0.02) 100%)`,
                 }}
               >
-                <span
-                  className="project-card-image-placeholder"
-                  style={{ fontSize: "5rem" }}
-                >
-                  {project.emoji}
-                </span>
+                
                 <div className="project-card-overlay">
                   {project.github && (
                     <a

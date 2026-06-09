@@ -9,23 +9,23 @@ gsap.registerPlugin(ScrollTrigger);
 const education = [
   {
     degree: "B.E. Computer Science & Engineering",
-    institution: "Francis Xavier Engineering College",
+    institution: "Jayaraj Annapackiam CSI College Of Engineering",
     period: "2021 – 2025",
-    grade: "7.5 CGPA",
+    grade: "8.4 CGPA",
     highlight: true,
   },
   {
     degree: "HSC – Computer Science",
-    institution: "St. Joseph's Higher Secondary School",
+    institution: "SSN. Govt Higher Secondary School",
     period: "2020 – 2021",
-    grade: "78.33%",
+    grade: "89%",
     highlight: false,
   },
   {
     degree: "SSLC",
-    institution: "St. Joseph's Higher Secondary School",
+    institution: "SSN. Govt Higher Secondary School",
     period: "2018 – 2019",
-    grade: "72.6%",
+    grade: "88%",
     highlight: false,
   },
 ];
@@ -180,47 +180,52 @@ export default function About() {
 
         {/* ── Panel 2: Education ──────────────────────────────── */}
         <div className="hs-panel hs-panel--education">
-          <div className="hs-panel-inner">
+          <div className="hs-panel-inner" style={{ maxWidth: '1000px', width: '100%' }}>
             <div className="hs-panel-number hs-reveal">02</div>
             <h2 className="hs-panel-title hs-reveal">
               My <span>Education</span>
             </h2>
             <div className="section-divider hs-reveal" style={{ marginBottom: "2.5rem" }} />
 
-            <div className="hs-edu-stack">
-              {education.map((edu, i) => (
-                <div
-                  key={i}
-                  className={`hs-edu-card hs-reveal ${edu.highlight ? "hs-edu-card--highlight" : ""}`}
-                >
-                  <div className="hs-edu-icon">🎓</div>
-                  <div className="hs-edu-info">
-                    <div className="hs-edu-degree">{edu.degree}</div>
-                    <div className="hs-edu-inst">{edu.institution}</div>
-                    <div className="hs-edu-meta">
-                      <span>{edu.period}</span>
-                      <span className="hs-edu-grade">{edu.grade}</span>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem', width: '100%' }}>
+              <div className="hs-edu-stack">
+                {education.map((edu, i) => (
+                  <div
+                    key={i}
+                    className={`hs-edu-card hs-reveal ${edu.highlight ? "hs-edu-card--highlight" : ""}`}
+                  >
+                    <div className="hs-edu-icon">🎓</div>
+                    <div className="hs-edu-info">
+                      <div className="hs-edu-degree">{edu.degree}</div>
+                      <div className="hs-edu-inst">{edu.institution}</div>
+                      <div className="hs-edu-meta">
+                        <span>{edu.period}</span>
+                        <span className="hs-edu-grade">{edu.grade}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Achievements */}
-            <div className="hs-achievements hs-reveal">
-              <div className="hs-ach-title">Highlights</div>
-              <div className="hs-ach-grid">
-                {[
-                  { icon: "🏆", text: "MERN Stack Certified Intern – Codsoft" },
-                  { icon: "⚡", text: "300+ DSA problems solved across platforms" },
-                  { icon: "🌐", text: "Open-source UI component contributor" },
-                  { icon: "📜", text: "HackerRank 5★ Problem Solving Badge" },
-                ].map((a, i) => (
-                  <div key={i} className="hs-ach-item">
-                    <span className="hs-ach-icon">{a.icon}</span>
-                    <span>{a.text}</span>
-                  </div>
                 ))}
+              </div>
+
+              {/* Achievements */}
+              <div className="hs-achievements hs-reveal" style={{ height: 'fit-content' }}>
+                <div className="hs-ach-title">Highlights</div>
+                <div className="hs-ach-grid" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  {[
+                    { icon: "🏆", text: "Naan Muthalvan Ambassador " },
+                    { icon: "🥈", text: "CSI Chapter Secretary" },
+                    { icon: "⚡", text: "300+ DSA problems solved across platforms" },
+                    { icon: "🌐", text: "Open-source UI component contributor" },
+                    { icon: "📜", text: "HackerRank 5★ Problem Solving Badge" },
+                    { icon: "🏆", text: "10+ Events Organized sucessfully (hackathon, workshop and etc..)" },
+
+                  ].map((a, i) => (
+                    <div key={i} className="hs-ach-item">
+                      <span className="hs-ach-icon">{a.icon}</span>
+                      <span>{a.text}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -228,38 +233,40 @@ export default function About() {
 
         {/* ── Panel 3: Personal / Fun ─────────────────────────── */}
         <div className="hs-panel hs-panel--personal">
-          <div className="hs-panel-inner">
+          <div className="hs-panel-inner" style={{ maxWidth: '1200px', width: '100%' }}>
             <div className="hs-panel-number hs-reveal">03</div>
             <h2 className="hs-panel-title hs-reveal">
               Beyond <span>SYNTAX</span>
             </h2>
             <div className="section-divider hs-reveal" style={{ marginBottom: "2.5rem" }} />
 
-            <div className="hs-interests hs-reveal">
-              {[
-                { icon: "🧩", title: "Problem Solver", desc: "Love tackling algorithmic challenges and brain teasers" },
-                { icon: "🎨", title: "UI Enthusiast", desc: "Obsessed with clean, purposeful interface design" },
-                { icon: "📚", title: "Continuous Learner", desc: "Always exploring new frameworks and tech trends" },
-                { icon: "🤝", title: "Team Player", desc: "Believe great software is built collaboratively" },
-                { icon: "🌍", title: "Open Source", desc: "Contributing to the community one PR at a time" },
-                { icon: "☕", title: "Coffee-Driven", desc: "Best ideas happen over a strong cup of filter coffee" },
-              ].map((item) => (
-                <div key={item.title} className="hs-interest-card">
-                  <div className="hs-interest-icon">{item.icon}</div>
-                  <div className="hs-interest-title">{item.title}</div>
-                  <div className="hs-interest-desc">{item.desc}</div>
-                </div>
-              ))}
-            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '4rem', alignItems: 'center' }}>
+              <div className="hs-interests hs-reveal">
+                {[
+                  { icon: "🧩", title: "Problem Solver", desc: "Love tackling algorithmic challenges and brain teasers" },
+                  { icon: "🎨", title: "UI Enthusiast", desc: "Obsessed with clean, purposeful interface design" },
+                  { icon: "📚", title: "Continuous Learner", desc: "Always exploring new frameworks and tech trends" },
+                  { icon: "🤝", title: "Team Player", desc: "Believe great software is built collaboratively" },
+                  { icon: "🌍", title: "Open Source", desc: "Contributing to the community one PR at a time" },
+                  { icon: "☕", title: "Coffee-Driven", desc: "Best ideas happen over a strong cup of filter coffee" },
+                ].map((item) => (
+                  <div key={item.title} className="hs-interest-card">
+                    <div className="hs-interest-icon">{item.icon}</div>
+                    <div className="hs-interest-title">{item.title}</div>
+                    <div className="hs-interest-desc">{item.desc}</div>
+                  </div>
+                ))}
+              </div>
 
-            {/* CTA */}
-            <div className="hs-cta-block hs-reveal">
-              <p className="hs-cta-text">
-                Ready to build something <span>amazing</span> together?
-              </p>
-              <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-                <a href="#contact" className="btn-primary">Let's Talk →</a>
-                <a href="#projects" className="btn-outline">View Projects</a>
+              {/* CTA */}
+              <div className="hs-cta-block hs-reveal" style={{ height: 'fit-content' }}>
+                <p className="hs-cta-text">
+                  Ready to build something <span>amazing</span> together?
+                </p>
+                <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+                  <a href="#contact" className="btn-primary">Let's Talk →</a>
+                  <a href="#projects" className="btn-outline">View Projects</a>
+                </div>
               </div>
             </div>
           </div>

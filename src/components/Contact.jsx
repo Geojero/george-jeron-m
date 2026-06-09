@@ -109,18 +109,18 @@ const socialLinks = [
   {
     icon: <GithubIcon />,
     label: "GitHub",
-    href: "https://github.com/Venkatesh0768",
+    href: "https://github.com/Geojero",
   },
   {
     icon: <LinkedinIcon />,
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/venkatesh-rapolu/",
+    href: "https://www.linkedin.com/in/george-jeron-m/",
   },
-  {
-    icon: <TwitterIcon />,
-    label: "Twitter",
-    href: "https://x.com/venkatesh6807",
-  },
+  // {
+  //   icon: <TwitterIcon />,
+  //   label: "Twitter",
+  //   href: "https://x.com/venkatesh6807",
+  // },
 ];
 
 export default function Contact() {
@@ -180,6 +180,21 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setStatus("sending");
+
+    const phoneNumber = "917604917208";
+    const text = `*New Contact Form Submission*
+*Name:* ${form.name}
+*Email:* ${form.email}
+*Subject:* ${form.subject}
+
+*Message:*
+${form.message}`;
+
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+
+    window.open(whatsappUrl, "_blank");
+
     // Simulate sending
     setTimeout(() => {
       setStatus("sent");

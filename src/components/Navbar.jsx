@@ -115,13 +115,13 @@ export default function Navbar({ theme, toggleTheme }) {
             >
               Resume
             </a> */}
-            <button
+            {/* <button
               className="theme-toggle"
               onClick={toggleTheme}
               aria-label="Toggle theme"
             >
               {theme === "dark" ? <SunIcon /> : <MoonIcon />}
-            </button>
+            </button> */}
             <button
               className="hamburger"
               onClick={() => setMobileOpen(!mobileOpen)}

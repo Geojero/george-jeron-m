@@ -7,79 +7,58 @@ gsap.registerPlugin(ScrollTrigger);
 const skillCategories = [
   {
     name: "Programming Languages",
+    color: "#EF9F27",
     skills: [
-      { name: "JavaScript", icon: "🟨" },
-      { name: "Python", icon: "🐍" },
-      { name: "C", icon: "🔣" },
-      { name: "Dart", icon: "🔣" },
-      { name: "Java", icon: "🔣" },
-      { name: "TypeScript", icon: "🟨" },
-
+      "JavaScript", "TypeScript", "Python", "Dart", "Java", "C",
     ],
   },
   {
     name: "Frontend",
+    color: "#5DCAA5",
     skills: [
-      { name: "React.js", icon: "⚛️" },
-      { name: "Next.js", icon: "⚛️" },
-      { name: "HTML5", icon: "🌐" },
-      { name: "CSS3", icon: "🎨" },
-      { name: "Tailwind CSS", icon: "💨" },
-      { name: "Material UI", icon: "🧩" },
+      "React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS", "Redux", "Material UI",
     ],
   },
   {
     name: "Backend",
+    color: "#7F77DD",
     skills: [
-      { name: "Node.js", icon: "🟢" },
-      { name: "Express.js", icon: "🚂" },
-      { name: "Fast API", icon: "🔵" },
-      { name: "REST APIs", icon: "🔗" },
+      "Node.js", "Express.js", "FastAPI", "Socket.IO", "REST APIs",
+    ],
+  },
+  {
+    name: "AI / ML",
+    color: "#D85A30",
+    skills: [
+      "Anthropic Claude", "OpenAI GPT-4", "Pydantic AI",
+      "LLM Prompt Engineering", "Ollama", "Robotics", "RAG", "Cerebro",
     ],
   },
   {
     name: "Databases",
-    skills: [
-      { name: "MongoDB", icon: "🍃" },
-      { name: "PostgreSQL", icon: "🐬" },
-      { name: "Typesense", icon: "🔣" },
-      { name: "MySQL", icon: "🐬" },
-    ],
+    color: "#378ADD",
+    skills: ["MongoDB", "PostgreSQL", "MySQL", "Typesense"],
   },
   {
     name: "Tools & Platforms",
+    color: "#888780",
     skills: [
-      { name: "Git", icon: "📦" },
-      { name: "GitHub", icon: "🐙" },
-      { name: "VS Code", icon: "🖥️" },
-      { name: "Firebase", icon: "🔥" },
-      { name: "Postman", icon: "🔣" },
-      { name: "Docker", icon: "🐳" },
-      { name: "Netlify", icon: "🔣" },
-      { name: "Vercel", icon: "🔣" },
-      { name: "AWS", icon: "☁️" },
-      { name: "Azure", icon: "☁️" },
-      { name: "GCP", icon: "☁️" },
+      "Git", "GitHub", "VS Code", "Figma", "Docker", "Firebase",
+      "Twilio", "Postman", "Netlify", "Vercel", "AWS", "Azure", "GCP",
     ],
   },
   {
     name: "Core Concepts",
+    color: "#D4537E",
     skills: [
-      { name: "Data Structures & Algorithms", icon: "📚" },
-      { name: "OOP", icon: "🧭" },
-      { name: "DBMS", icon: "🗄️" },
-      { name: "System Design", icon: "📚" },
-
+      "Data Structures & Algorithms", "OOP", "DBMS", "System Design",
     ],
   },
   {
     name: "Soft Skills",
+    color: "#639922",
     skills: [
-      { name: "Problem Solving", icon: "🧠" },
-      { name: "Adaptability", icon: "🔄" },
-      { name: "Team Collaboration", icon: "🤝" },
-      { name: "Quick Learning", icon: "⚡" },
-
+      "Problem Solving", "Adaptability", "Team Collaboration", "Quick Learning",
     ],
   },
 ];
@@ -90,7 +69,6 @@ export default function Skills() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate section header
       gsap.fromTo(
         headerRef.current,
         { opacity: 0, y: 40 },
@@ -107,18 +85,17 @@ export default function Skills() {
         },
       );
 
-      // Animate each skill chip with stagger
       const chips = sectionRef.current.querySelectorAll(".skill-chip");
       gsap.fromTo(
         chips,
-        { opacity: 0, scale: 0.8, y: 20 },
+        { opacity: 0, scale: 0.85, y: 16 },
         {
           opacity: 1,
           scale: 1,
           y: 0,
-          duration: 0.5,
+          duration: 0.4,
           ease: "back.out(1.7)",
-          stagger: 0.03,
+          stagger: 0.02,
           scrollTrigger: {
             trigger: sectionRef.current.querySelector(".skills-categories"),
             start: "top 80%",
@@ -126,14 +103,25 @@ export default function Skills() {
           },
         },
       );
+
+      // Apply hover effect to all items while scrolling
+      chips.forEach((chip) => {
+        ScrollTrigger.create({
+          trigger: chip,
+          start: "top 65%",
+          end: "bottom 35%",
+          toggleClass: "scroll-active",
+        });
+      });
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section id="skills" className="section skills-section" ref={sectionRef}>
-      <div className="container">
+    <section id="skills" className="skills-section" ref={sectionRef}>
+      <div className="skills-blob" />
+      <div className="container skills-container">
         <div className="section-header" ref={headerRef} style={{ opacity: 0 }}>
           <span className="section-label">Skills</span>
           <h2 className="section-title">
@@ -144,13 +132,23 @@ export default function Skills() {
 
         <div className="skills-categories">
           {skillCategories.map((category) => (
-            <div key={category.name}>
-              <h3 className="skills-category-title">{category.name}</h3>
+            <div key={category.name} className="skills-category-block">
+              <div className="skills-category-header">
+                <span
+                  className="skills-category-dot"
+                  style={{ backgroundColor: category.color }}
+                />
+                <span className="skills-category-name">{category.name}</span>
+                <span className="skills-category-rule" />
+              </div>
               <div className="skills-grid">
                 {category.skills.map((skill) => (
-                  <div key={skill.name} className="skill-chip">
-                    <span className="skill-chip-icon">{skill.icon}</span>
-                    {skill.name}
+                  <div key={skill} className="skill-chip">
+                    <span
+                      className="skill-chip-dot"
+                      style={{ backgroundColor: category.color }}
+                    />
+                    {skill}
                   </div>
                 ))}
               </div>
