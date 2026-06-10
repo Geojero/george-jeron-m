@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 /* ── Experience data ─────────────────────────────────────────── */
 const experience = [
   {
-    title: "JUN 2026",
+    title: "PRESENT",
     role: "System Engineer",
     company: "Tata Consultancy Services",
     period: "JUN 2026 – PRESENT",
@@ -27,7 +27,7 @@ const experience = [
   {
     title: "DEC 2024",
     role: "MERN Stack Intern",
-    company: "ICANio",
+    company: "CORIZO",
     period: "DEC 2024 – JAN 2025",
     type: "Internship",
     desc: "Built full-stack features using MongoDB, Express, React and Node.js. Developed RESTful APIs and responsive UI components for real-world client projects with a focus on performance.",
@@ -36,7 +36,7 @@ const experience = [
   {
     title: "JUN 2024",
     role: "Web Development Intern",
-    company: "CORIZO",
+    company: "ICANio",
     period: "JUN 2024 – JUL 2024",
     type: "Internship",
     desc: "Designed and developed interactive web pages with HTML, CSS, and JavaScript. Collaborated with cross-functional teams to deliver pixel-perfect, accessible UIs on time.",
@@ -141,7 +141,7 @@ export default function Experience() {
               {/* Mobile-only date */}
               <div className="exp-tl-date-mobile">{exp.title}</div>
 
-              <div className="exp-tl-card">
+              <div className={`exp-tl-card ${i === 0 ? "glow-active" : ""}`}>
                 {/* Card header */}
                 <div className="exp-tl-card-head">
                   <div>

@@ -28,7 +28,7 @@ const profiles = [
     name: "LeetCode",
     handle: "@",
     url: "#",
-    stats: [{ number: "500+", label: "Problems Solved" }],
+    stats: [{ number: "100+", label: "Problems Solved" }],
     description:
       "Consistent practice on algorithm and data structure problems.",
     iconBg: "#FFA116",
@@ -39,8 +39,8 @@ const profiles = [
     handle: "@",
     url: "#",
     stats: [
-      { number: "30+", label: "Repositories" },
-      { number: "100+", label: "Commits" },
+      { number: "20+", label: "Repositories" },
+      { number: "500+", label: "Commits" },
     ],
     description:
       "Open source projects and personal repositories showcasing MERN projects.",
@@ -51,7 +51,7 @@ const profiles = [
     name: "SkillRack",
     handle: "@",
     url: "#",
-    stats: [{ number: "300+", label: "Programs Solved" }],
+    stats: [{ number: "100+", label: "Programs Solved" }],
     description: "Competitive programming practice and challenge solving.",
     iconBg: "#f4a141",
   },
@@ -164,15 +164,6 @@ export default function CodingProfiles() {
                   </div>
                 ))}
               </div>
-
-              <a
-                href={profile.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="coding-card-link"
-              >
-                View Profile <ArrowRightIcon />
-              </a>
             </div>
           ))}
         </div>

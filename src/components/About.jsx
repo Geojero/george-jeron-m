@@ -163,15 +163,15 @@ export default function About() {
             {/* Stats */}
             <div className="hs-avatar-stats">
               <div className="hs-stat">
-                <span className="hs-stat-num">2+</span>
-                <span className="hs-stat-lbl">Internships</span>
+                <span className="hs-stat-num">4+</span>
+                <span className="hs-stat-lbl">Companies</span>
               </div>
               <div className="hs-stat">
-                <span className="hs-stat-num">10+</span>
+                <span className="hs-stat-num">20+</span>
                 <span className="hs-stat-lbl">Projects</span>
               </div>
               <div className="hs-stat">
-                <span className="hs-stat-num">300+</span>
+                <span className="hs-stat-num">100+</span>
                 <span className="hs-stat-lbl">DSA Problems</span>
               </div>
             </div>
@@ -187,7 +187,7 @@ export default function About() {
             </h2>
             <div className="section-divider hs-reveal" style={{ marginBottom: "2.5rem" }} />
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem', width: '100%' }}>
+            <div className="hs-edu-layout">
               <div className="hs-edu-stack">
                 {education.map((edu, i) => (
                   <div
@@ -240,7 +240,7 @@ export default function About() {
             </h2>
             <div className="section-divider hs-reveal" style={{ marginBottom: "2.5rem" }} />
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '4rem', alignItems: 'center' }}>
+            <div className="hs-personal-layout">
               <div className="hs-interests hs-reveal">
                 {[
                   { icon: "🧩", title: "Problem Solver", desc: "Love tackling algorithmic challenges and brain teasers" },

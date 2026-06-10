@@ -1991,6 +1991,22 @@ body {
   }
 }
 
+/* ── Education Layout ── */
+.hs-edu-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  width: 100%;
+}
+
+/* ── Personal Layout ── */
+.hs-personal-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
 /* ── Mobile fallback: stack vertically ──────────────────────── */
 @media (max-width: 768px) {
   .hs-outer {
@@ -2035,6 +2051,21 @@ body {
   .hs-avatar-card {
     flex: none;
     width: 100%;
+    padding: 2rem 1.5rem;
+  }
+
+  .hs-avatar-stats {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .hs-stat {
+    flex: 1 1 calc(50% - 0.5rem);
+    padding: 0.6rem 0.4rem;
+  }
+
+  .hs-stat-lbl {
+    font-size: 0.6rem;
   }
 
   .hs-interests {
@@ -2052,6 +2083,30 @@ body {
 
   .hs-ach-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hs-edu-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hs-edu-card {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .hs-edu-meta {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .hs-achievements {
+    padding: 1.5rem;
+  }
+
+  .hs-personal-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 }
 
@@ -2259,6 +2314,56 @@ body {
 
 .exp-tl-card:hover::before {
   opacity: 1;
+}
+
+/* ── Glow & Shine for the active/1st card ── */
+.exp-tl-card.glow-active {
+  border-color: rgba(200, 255, 0, 0.6);
+  background: linear-gradient(135deg, rgba(200, 255, 0, 0.08) 0%, var(--bg-card) 100%);
+  animation: cardGlowPulse 3s ease-in-out infinite alternate;
+}
+
+.exp-tl-card.glow-active::before {
+  opacity: 1;
+}
+
+.exp-tl-card.glow-active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: shineSweep 4s infinite;
+  pointer-events: none;
+}
+
+@keyframes cardGlowPulse {
+  0% {
+    box-shadow: 0 0 20px rgba(200, 255, 0, 0.1), inset 0 0 15px rgba(200, 255, 0, 0.05);
+  }
+  100% {
+    box-shadow: 0 0 50px rgba(200, 255, 0, 0.3), inset 0 0 40px rgba(200, 255, 0, 0.2);
+  }
+}
+
+@keyframes shineSweep {
+  0% {
+    left: -100%;
+  }
+  20% {
+    left: 200%;
+  }
+  100% {
+    left: 200%;
+  }
 }
 
 /* Card header row */
